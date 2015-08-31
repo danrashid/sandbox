@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modal + form events</title>
+<link rel="stylesheet" href="lib/normalize.css" />
+<link rel="stylesheet" href="lib/foundation.min.css" />
+<script src="lib/modernizr.js"></script>
+</head>
+<body>
+
+<div class="row">
+  <div class="columns">
+    <a href="#" data-reveal-id="myModal" class="button">Click Me For A Modal</a>
+  </div>
+</div>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"></div>
+
+<script src="lib/jquery.js"></script>
+<script src="lib/foundation.min.js"></script>
+<script type="text/javascript">
+
+$(document).foundation({
+  reveal: {
+    opened: function () {
+      $(this).foundation('abide', 'reflow');
+    }
+  }
+});
+
+$('#myModal')
+  .html('<h2 id="modalTitle">Awesome. I have it.</h2><form data-abide="ajax"><div class="name-field"><label>Your name <small>required</small><input type="text" required pattern="[a-zA-Z]+" name="name"></label><small class="error">Name is required and must be a string.</small></div><button type="submit">Submit</button></form><a class="close-reveal-modal" aria-label="Close">&#215;</a>');
+
+/*
+
+  Truths:
+
+  • When an Abide form uses its own submit handlers, it must have data-abide="ajax".
+  • When an Abide form is injected OR MADE VISIBLE, Abide must be reflowed to it or one of its parents.
+  • Once bound, the valid.fndtn.abide event reliably happens on the form element.
+  • Previously, valid.fndtn.abide happened on inputs too. It doesn’t anymore, but valid seems to.
+    - The valid event does not bubble up to the form.
+
+*/
+
+$('#myModal form').on('valid.fndtn.abide', function () {
+  console.log("('#myModal form').on('valid.fndtn.abide') was triggered");
+
+  return false;
+});
+
+$('#myModal').on('valid.fndtn.abide', 'form', function () {
+  console.log("('#myModal').on('valid.fndtn.abide', 'form') was triggered");
+
+  return false;
+});
+
+$('#myModal input').on('valid.fndtn.abide', function () {
+  console.log("('#myModal input').on('valid.fndtn.abide') was triggered");
+
+  return false;
+});
+
+$('#myModal').on('valid.fndtn.abide', 'input', function () {
+  console.log("('#myModal').on('valid.fndtn.abide', 'input') was triggered");
+
+  return false;
+});
+
+$('#myModal input').on('valid', function () {
+  console.log("('#myModal input').on('valid') was triggered");
+
+  return false;
+});
+
+$('#myModal').on('valid', 'input', function () {
+  console.log("('#myModal').on('valid', 'input') was triggered");
+
+  return false;
+});
+
+</script>
+</body>
+</html>
