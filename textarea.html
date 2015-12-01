@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>textarea</title>
+<script src="lib/jquery.js"></script>
+<style type="text/css">
+
+body {
+  font: 1em/1.375em sans-serif;
+}
+
+textarea,
+button {
+  font: inherit;
+}
+
+#operators,
+textarea {
+  box-sizing: border-box;
+  height: 10em;
+}
+
+#operators {
+  padding-top: 1.375em; /* Should match line-height */
+  background: silver;
+  width: 3em;
+  float: left;
+}
+
+textarea {
+  width: 50%;
+  resize: none;
+}
+
+</style>
+</head>
+<body>
+<form>
+<div id="operators"></div>
+<textarea></textarea>
+<p><button type="submit">Submit</button></p>
+</form>
+<script type="text/javascript">
+
+var $operators = $('#operators');
+
+$('textarea').on('keyup', function () {
+  var lineCount = $(this).val().split('\n').length,
+    operatorCount = Math.min(lineCount, 7), // Where 7 is the number of textarea rows
+    operatorsHtml = '';
+
+  while (operatorCount > 1) { // Offset by one to omit the first line's operator
+    operatorsHtml += '<div>or</div>';
+    operatorCount -= 1;
+  }
+
+  $operators.html(operatorsHtml);
+});
+
+</script>
+</body>
+</html>
