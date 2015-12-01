@@ -9,25 +9,32 @@ body {
   font: 1em/1.375em sans-serif;
 }
 
-textarea,
-button {
+textarea {
   font: inherit;
 }
 
 #operators,
 textarea {
-  box-sizing: border-box;
-  height: 10em;
+  border-width: 1px;
+  border-style: solid;
+  padding: .25em;
+  height: 11em;
 }
 
 #operators {
-  padding-top: 1.375em; /* Should match line-height */
   background: silver;
+  border-color: silver;
   width: 3em;
   float: left;
+  overflow: hidden;
+}
+
+#operators :first-child {
+  visibility: hidden;
 }
 
 textarea {
+  border-color: black;
   width: 50%;
   resize: none;
 }
@@ -35,27 +42,25 @@ textarea {
 </style>
 </head>
 <body>
-<form>
 <div id="operators"></div>
 <textarea></textarea>
-<p><button type="submit">Submit</button></p>
-</form>
 <script type="text/javascript">
 
 var $operators = $('#operators');
 
-$('textarea').on('keyup', function () {
-  var lineCount = $(this).val().split('\n').length,
-    operatorCount = Math.min(lineCount, 7), // Where 7 is the number of textarea rows
-    operatorsHtml = '';
+$('textarea')
+  .on('keyup', function () {
+    var operatorsHtml = '';
 
-  while (operatorCount > 1) { // Offset by one to omit the first line's operator
-    operatorsHtml += '<div>or</div>';
-    operatorCount -= 1;
-  }
+    $(this).val().split('\n').forEach(function () {
+      operatorsHtml += '<div>or</div>';
+    });
 
-  $operators.html(operatorsHtml);
-});
+    $operators.html(operatorsHtml);
+  })
+  .on('scroll', function () {
+    $operators.scrollTop($(this).scrollTop());
+  });
 
 </script>
 </body>
