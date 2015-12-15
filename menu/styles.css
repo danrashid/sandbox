@@ -22,18 +22,21 @@ nav {
   nav .cellular a {
     display: table-cell;
     width: 100%; }
+    nav .cellular a:last-child {
+      white-space: nowrap; }
   nav [data-expandable-id] {
-    border-width: 0 1px 1px; }
+    border-width: 0 1px 1px 0; }
     nav [data-expandable-id]:before {
       content: '▸'; }
     nav [data-expandable-id].open {
-      border-bottom: none; }
+      border-width: 0 1px 0 1px; }
       nav [data-expandable-id].open:before {
         content: '▾'; }
   nav .scrollable {
     overflow-y: auto; }
     nav .scrollable a {
-      border-bottom-color: whitesmoke; }
+      border-bottom-color: whitesmoke;
+      padding-left: 2em; }
   nav .expandable {
     display: none; }
     nav .expandable.open {
@@ -45,7 +48,17 @@ nav {
   text-align: center;
   font-size: .75em; }
   .primary-nav a {
-    height: 72px; }
+    position: relative;
+    padding: 4.25em 0 .5em;
+    min-height: 72px; }
+    .primary-nav a.open {
+      background: whitesmoke; }
+  .primary-nav .icon:before {
+    position: absolute;
+    content: '✪';
+    font-size: 4em;
+    left: .375em;
+    top: 0; }
 
 .secondary-nav {
   z-index: 1;
@@ -57,3 +70,7 @@ nav {
     left: 72px; }
   .secondary-nav a {
     padding: .75em 1em; }
+  .secondary-nav .icon:before {
+    display: inline-block;
+    content: '✪';
+    width: 1em; }
