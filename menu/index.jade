@@ -1,0 +1,89 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title menu
+    link(rel="stylesheet" href="../lib/normalize.css")
+    link(rel="stylesheet" href="../lib/foundation.min.css")
+    link(rel="stylesheet" href="styles.css")
+    script(src="../lib/modernizr.js")
+
+  body
+    nav.primary-nav
+      a(href="#" data-secondary-nav-id="brands-nav") Dashboard
+      a(href="#" data-secondary-nav-id="behaviors-nav") Behaviors
+      a(href="#" data-secondary-nav-id="user-attributes-nav") User Attributes
+      a(href="#" data-secondary-nav-id="segments-nav") Segments
+      a(href="#" data-secondary-nav-id="actions-nav") Actions
+      a(href="#inspect") Inspect
+
+    nav.secondary-nav#brands-nav
+      .cellular
+        a(href="#brands") Brands
+        a(href="#add-brand") Add
+      .scrollable
+        .cellular
+          a(href="#brand-1") Brand 1
+          a(href="#edit-brand-1") Edit
+        .cellular
+          a(href="#brand-2") Brand Brand Brand Brand Brand Brand Brand Brand Brand Brand 2
+          a(href="#edit-brand-2") Edit
+        .cellular
+          a(href="#brand-3") Brand 3
+          a(href="#edit-brand-3") Edit
+
+    nav.secondary-nav#behaviors-nav
+      .cellular
+        a(href="#behaviors") Behaviors
+        a(href="#" data-expand-id="behaviors-scrollable").open
+        a(href="#add-behavior") Add
+      .scrollable#behaviors-scrollable.open
+        .cellular
+          a(href="#behavior-1") Behavior 1
+          a(href="#edit-behavior-1") Edit
+        .cellular
+          a(href="#behavior-2") Behavior 2
+          a(href="#edit-behavior-2") Edit
+        .cellular
+          a(href="#behavior-3") Behavior 3
+          a(href="#edit-behavior-3") Edit
+      .cellular
+        a(href="#behavior-traits") Behavior Traits
+        a(href="#" data-expand-id="behavior-traits-scrollable")
+        a(href="#add-behavior-trait") Add
+      .scrollable#behavior-traits-scrollable
+        .cellular
+          a(href="#behavior-trait-1") Behavior Trait 1
+          a(href="#edit-behavior-trait-1") Edit
+        .cellular
+          a(href="#behavior-trait-2") Behavior Trait 2
+          a(href="#edit-behavior-trait-2") Edit
+        .cellular
+          a(href="#behavior-trait-3") Behavior Trait 3
+          a(href="#edit-behavior-trait-3") Edit
+      a(href="#channels") Channels
+      a(href="#behavior-groups") Behavior Groups
+
+    nav.secondary-nav#user-attributes-nav
+
+    nav.secondary-nav#segments-nav
+
+    nav.secondary-nav#actions-nav
+
+    .row
+      .columns
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    script(src="../lib/jquery.js")
+    script(src="../lib/foundation.min.js")
+    script.
+      $(document).foundation();
+    script(src="scripts.js")
