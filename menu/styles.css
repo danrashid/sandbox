@@ -34,10 +34,7 @@ nav {
     nav .scrollable.open {
       display: block; }
     nav .scrollable a:first-child {
-      padding-left: 2em;
-      border-right: 1px solid whitesmoke; }
-    nav .scrollable .cellular:not(:last-child) {
-      border-bottom: 1px solid whitesmoke; }
+      padding-left: 2em; }
 
 .primary-nav {
   z-index: 2;
@@ -66,13 +63,22 @@ nav {
   .secondary-nav.open {
     left: 72px; }
   .secondary-nav a,
+  .secondary-nav span,
+  .secondary-nav .scrollable {
+    border-bottom: 1px solid lightgray; }
+  .secondary-nav a,
   .secondary-nav span {
     padding: .75em 1em; }
+  .secondary-nav span,
+  .secondary-nav [data-scrollable-id].open,
+  .secondary-nav .scrollable a {
+    border-bottom-color: whitesmoke; }
+  .secondary-nav span,
+  .secondary-nav [data-scrollable-id] {
+    border-right: 1px solid lightgray; }
+  .secondary-nav .scrollable > :last-child a {
+    border-bottom: none; }
   .secondary-nav .icon:before {
     display: inline-block;
     content: '✪';
     width: 1em; }
-  .secondary-nav > * {
-    border-bottom: 1px solid lightgray; }
-  .secondary-nav > .cellular > :not(:first-child) {
-    border-left: 1px solid whitesmoke; }

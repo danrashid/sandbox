@@ -56,11 +56,6 @@ nav {
 
     a:first-child {
       padding-left: 2em;
-      border-right: 1px solid whitesmoke;
-    }
-
-    .cellular:not(:last-child) {
-      border-bottom: 1px solid whitesmoke;
     }
   }
 }
@@ -102,21 +97,34 @@ nav {
   }
 
   a,
+  span,
+  .scrollable {
+    border-bottom: 1px solid lightgray;
+  }
+
+  a,
   span {
     padding: .75em 1em;
+  }
+
+  span,
+  [data-scrollable-id].open,
+  .scrollable a {
+    border-bottom-color: whitesmoke;
+  }
+
+  span,
+  [data-scrollable-id] {
+    border-right: 1px solid lightgray;
+  }
+
+  .scrollable > :last-child a {
+    border-bottom: none;
   }
 
   .icon:before {
     display: inline-block;
     content: '✪';
     width: 1em;
-  }
-
-  > * {
-    border-bottom: 1px solid lightgray;
-  }
-
-  > .cellular > :not(:first-child) {
-    border-left: 1px solid whitesmoke;
   }
 }
