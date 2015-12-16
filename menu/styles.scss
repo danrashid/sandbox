@@ -11,40 +11,36 @@ nav {
   line-height: normal;
 
   a,
+  span,
   .scrollable {
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: lightgray;
-  }
-
-  a {
     display: block;
     box-sizing: border-box;
-
-    &:hover {
-      background: whitesmoke;
-    }
   }
 
-  .cellular a {
+  a:hover {
+    background: whitesmoke;
+  }
+
+  span {
+    color: dimgray;
+  }
+
+  .cellular > * {
     display: table-cell;
     width: 100%;
 
-    &:last-child {
+    &:not(:first-child) {
       white-space: nowrap;
     }
   }
 
   [data-scrollable-id] {
-    border-width: 0 1px 1px 0;
-
-    &:before {
+    &:after {
       content: '▸';
+      margin-left: .25em;
     }
     &.open {
-      border-width: 0 1px 0 1px;
-
-      &:before {
+      &:after {
         content: '▾';
       }
     }
@@ -58,12 +54,13 @@ nav {
       display: block;
     }
 
-    a {
-      border-bottom-color: whitesmoke;
+    a:first-child {
+      padding-left: 2em;
+      border-right: 1px solid whitesmoke;
+    }
 
-      &:first-child {
-        padding-left: 2em;
-      }
+    .cellular:not(:last-child) {
+      border-bottom: 1px solid whitesmoke;
     }
   }
 }
@@ -104,7 +101,8 @@ nav {
     left: 72px;
   }
 
-  a {
+  a,
+  span {
     padding: .75em 1em;
   }
 
@@ -112,5 +110,13 @@ nav {
     display: inline-block;
     content: '✪';
     width: 1em;
+  }
+
+  > * {
+    border-bottom: 1px solid lightgray;
+  }
+
+  > .cellular > :not(:first-child) {
+    border-left: 1px solid whitesmoke;
   }
 }

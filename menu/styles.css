@@ -10,37 +10,34 @@ nav {
   box-shadow: 1px 1px 1px lightgray;
   line-height: normal; }
   nav a,
+  nav span,
   nav .scrollable {
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: lightgray; }
-  nav a {
     display: block;
     box-sizing: border-box; }
-    nav a:hover {
-      background: whitesmoke; }
-  nav .cellular a {
+  nav a:hover {
+    background: whitesmoke; }
+  nav span {
+    color: dimgray; }
+  nav .cellular > * {
     display: table-cell;
     width: 100%; }
-    nav .cellular a:last-child {
+    nav .cellular > *:not(:first-child) {
       white-space: nowrap; }
-  nav [data-scrollable-id] {
-    border-width: 0 1px 1px 0; }
-    nav [data-scrollable-id]:before {
-      content: '▸'; }
-    nav [data-scrollable-id].open {
-      border-width: 0 1px 0 1px; }
-      nav [data-scrollable-id].open:before {
-        content: '▾'; }
+  nav [data-scrollable-id]:after {
+    content: '▸';
+    margin-left: .25em; }
+  nav [data-scrollable-id].open:after {
+    content: '▾'; }
   nav .scrollable {
     display: none;
     overflow-y: auto; }
     nav .scrollable.open {
       display: block; }
-    nav .scrollable a {
-      border-bottom-color: whitesmoke; }
-      nav .scrollable a:first-child {
-        padding-left: 2em; }
+    nav .scrollable a:first-child {
+      padding-left: 2em;
+      border-right: 1px solid whitesmoke; }
+    nav .scrollable .cellular:not(:last-child) {
+      border-bottom: 1px solid whitesmoke; }
 
 .primary-nav {
   z-index: 2;
@@ -68,9 +65,14 @@ nav {
   font-size: .875em; }
   .secondary-nav.open {
     left: 72px; }
-  .secondary-nav a {
+  .secondary-nav a,
+  .secondary-nav span {
     padding: .75em 1em; }
   .secondary-nav .icon:before {
     display: inline-block;
     content: '✪';
     width: 1em; }
+  .secondary-nav > * {
+    border-bottom: 1px solid lightgray; }
+  .secondary-nav > .cellular > :not(:first-child) {
+    border-left: 1px solid whitesmoke; }
