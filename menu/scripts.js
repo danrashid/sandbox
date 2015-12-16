@@ -9,13 +9,17 @@ function hideSecondaryNavs() {
 function setScrollableHeight() {
   $('.secondary-nav.open .scrollable.open').each(function () {
     var $this = $(this),
-      availableHeight = $this.closest('nav').getBBoxHeight();
+      availableHeight = $this.closest('nav').height();
 
     $this.siblings(':not(.scrollable)').each(function () {
       availableHeight -= $(this).getBBoxHeight();
     });
 
-    $this.height(Math.min(availableHeight, $this.getBBoxHeight()));
+    if (availableHeight < $this.getBBoxHeight()) {
+      $this.css('height', availableHeight + 'px');
+    } else {
+      $this.css('height', '');
+    }
   });
 }
 

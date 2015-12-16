@@ -33,7 +33,8 @@ nav {
     overflow-y: auto; }
     nav .scrollable.open {
       display: block; }
-    nav .scrollable a:first-child {
+    nav .scrollable > a,
+    nav .scrollable .cellular :first-child {
       padding-left: 2em; }
 
 .primary-nav {

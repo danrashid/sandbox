@@ -54,7 +54,8 @@ nav {
       display: block;
     }
 
-    a:first-child {
+    > a,
+    .cellular :first-child {
       padding-left: 2em;
     }
   }
