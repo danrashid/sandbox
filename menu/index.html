@@ -9,32 +9,68 @@
     <script src="../lib/modernizr.js"></script>
   </head>
   <body>
-    <nav class="primary-nav"><a href="#" data-secondary-nav-id="brands-nav" class="icon open">Dashboard</a><a href="#" data-secondary-nav-id="behaviors-nav" class="icon">Behaviors</a><a href="#" data-secondary-nav-id="user-attributes-nav" class="icon">User Attributes</a><a href="#" data-secondary-nav-id="segments-nav" class="icon">Segments</a><a href="#" data-secondary-nav-id="actions-nav" class="icon">Actions</a><a href="#inspect" class="icon">Inspect</a></nav>
-    <nav id="brands-nav" class="secondary-nav open">
+    <nav class="primary-nav"><a href="#" data-secondary-nav-id="brands-nav" class="icon">Dashboard</a><a href="#" data-secondary-nav-id="behaviors-nav" class="icon">Behaviors</a><a href="#" data-secondary-nav-id="user-attributes-nav" class="icon">User Attributes</a><a href="#" data-secondary-nav-id="segments-nav" class="icon">Segments</a><a href="#" data-secondary-nav-id="actions-nav" class="icon">Actions</a><a href="#inspect" class="icon">Inspect</a></nav>
+    <nav id="brands-nav" class="secondary-nav">
       <div class="cellular"><a href="#brands" class="icon">Brands</a><a href="#add-brand">Add</a></div>
-      <div class="scrollable">
+      <div class="scrollable open">
         <div class="cellular"><a href="#brand-1">Brand 1</a><a href="#edit-brand-1">Edit</a></div>
-        <div class="cellular"><a href="#brand-2">Brand Brand Brand Brand Brand Brand Brand Brand Brand Brand 2</a><a href="#edit-brand-2">Edit</a></div>
+        <div class="cellular"><a href="#brand-2">Brand 2 has a long name to show what happens when the link wraps</a><a href="#edit-brand-2">Edit</a></div>
         <div class="cellular"><a href="#brand-3">Brand 3</a><a href="#edit-brand-3">Edit</a></div>
       </div>
     </nav>
     <nav id="behaviors-nav" class="secondary-nav">
-      <div class="cellular"><a href="#behaviors" class="icon">Behaviors</a><a href="#" data-expandable-id="behaviors-expandable" class="open"></a><a href="#add-behavior">Add</a></div>
-      <div id="behaviors-expandable" class="scrollable expandable open">
+      <div class="cellular"><a href="#behaviors" class="icon">Behaviors</a><a href="#" data-scrollable-id="behaviors-scrollable" class="open"></a><a href="#add-behavior">Add</a></div>
+      <div id="behaviors-scrollable" class="scrollable open">
         <div class="cellular"><a href="#behavior-1">Behavior 1</a><a href="#edit-behavior-1">Edit</a></div>
         <div class="cellular"><a href="#behavior-2">Behavior 2</a><a href="#edit-behavior-2">Edit</a></div>
         <div class="cellular"><a href="#behavior-3">Behavior 3</a><a href="#edit-behavior-3">Edit</a></div>
+        <div class="cellular"><a href="#behavior-4">Behavior 4</a><a href="#edit-behavior-4">Edit</a></div>
+        <div class="cellular"><a href="#behavior-5">Behavior 5</a><a href="#edit-behavior-5">Edit</a></div>
+        <div class="cellular"><a href="#behavior-6">Behavior 6</a><a href="#edit-behavior-6">Edit</a></div>
       </div>
-      <div class="cellular"><a href="#behavior-traits" class="icon">Behavior Traits</a><a href="#" data-expandable-id="behavior-traits-expandable"></a><a href="#add-behavior-trait">Add</a></div>
-      <div id="behavior-traits-expandable" class="scrollable expandable">
+      <div class="cellular"><a href="#behavior-traits" class="icon">Behavior Traits</a><a href="#" data-scrollable-id="behavior-traits-scrollable"></a><a href="#add-behavior-trait">Add</a></div>
+      <div id="behavior-traits-scrollable" class="scrollable">
         <div class="cellular"><a href="#behavior-trait-1">Behavior Trait 1</a><a href="#edit-behavior-trait-1">Edit</a></div>
         <div class="cellular"><a href="#behavior-trait-2">Behavior Trait 2</a><a href="#edit-behavior-trait-2">Edit</a></div>
         <div class="cellular"><a href="#behavior-trait-3">Behavior Trait 3</a><a href="#edit-behavior-trait-3">Edit</a></div>
       </div><a href="#behavior-groups" class="icon">Behavior Groups</a><a href="#channels" class="icon">Channels</a>
     </nav>
-    <nav id="user-attributes-nav" class="secondary-nav"></nav>
-    <nav id="segments-nav" class="secondary-nav"></nav>
-    <nav id="actions-nav" class="secondary-nav"></nav>
+    <nav id="user-attributes-nav" class="secondary-nav">
+      <div class="cellular"><a href="#user-attributes" class="icon">User Attributes</a><a href="#" data-scrollable-id="user-attributes-scrollable" class="open"></a><a href="#add-user-attribute">Add</a></div>
+      <div id="user-attributes-scrollable" class="scrollable open">
+        <div class="cellular"><a href="#user-attribute-1">User Attribute 1</a><a href="#edit-user-attribute-1">Edit</a></div>
+        <div class="cellular"><a href="#user-attribute-2">User Attribute 2</a><a href="#edit-user-attribute-2">Edit</a></div>
+        <div class="cellular"><a href="#user-attribute-3">User Attribute 3</a><a href="#edit-user-attribute-3">Edit</a></div>
+      </div>
+      <div class="cellular"><a href="#user-attribute-sources" class="icon">User Attribute Sources</a><a href="#" data-scrollable-id="user-attribute-sources-scrollable"></a><a href="#add-user-attribute-source">Add</a></div>
+      <div id="user-attribute-sources-scrollable" class="scrollable">
+        <div class="cellular"><a href="#user-attribute-source-1">User Attribute Source 1</a><a href="#edit-user-attribute-source-1">Edit</a></div>
+        <div class="cellular"><a href="#user-attribute-source-2">User Attribute Source 2</a><a href="#edit-user-attribute-source-2">Edit</a></div>
+        <div class="cellular"><a href="#user-attribute-source-3">User Attribute Source 3</a><a href="#edit-user-attribute-source-3">Edit</a></div>
+      </div>
+    </nav>
+    <nav id="segments-nav" class="secondary-nav">
+      <div class="cellular"><a href="#segments" class="icon">Segments</a><a href="#add-segment">Add</a></div>
+      <div class="scrollable open">
+        <div class="cellular"><a href="#segment-1">Segment 1</a><a href="#edit-segment-1">Edit</a></div>
+        <div class="cellular"><a href="#segment-2">Segment 2</a><a href="#edit-segment-2">Edit</a></div>
+        <div class="cellular"><a href="#segment-3">Segment 3</a><a href="#edit-segment-3">Edit</a></div>
+        <div class="cellular"><a href="#segment-4">Segment 4</a><a href="#edit-segment-4">Edit</a></div>
+        <div class="cellular"><a href="#segment-5">Segment 5</a><a href="#edit-segment-5">Edit</a></div>
+        <div class="cellular"><a href="#segment-6">Segment 6</a><a href="#edit-segment-6">Edit</a></div>
+        <div class="cellular"><a href="#segment-7">Segment 7</a><a href="#edit-segment-7">Edit</a></div>
+        <div class="cellular"><a href="#segment-8">Segment 8</a><a href="#edit-segment-8">Edit</a></div>
+        <div class="cellular"><a href="#segment-9">Segment 9</a><a href="#edit-segment-9">Edit</a></div>
+      </div>
+    </nav>
+    <nav id="actions-nav" class="secondary-nav">
+      <div class="cellular"><a href="#actions" class="icon">Actions</a><a href="#add-action">Add</a></div>
+      <div class="scrollable open">
+        <div class="cellular"><a href="#action-1">Action 1</a><a href="#edit-action-1">Edit</a></div>
+        <div class="cellular"><a href="#action-2">Action 2</a><a href="#edit-action-2">Edit</a></div>
+        <div class="cellular"><a href="#action-3">Action 3</a><a href="#edit-action-3">Edit</a></div>
+      </div>
+    </nav>
     <div class="row">
       <div class="columns">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

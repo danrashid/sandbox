@@ -35,7 +35,7 @@ nav {
     }
   }
 
-  [data-expandable-id] {
+  [data-scrollable-id] {
     border-width: 0 1px 1px 0;
 
     &:before {
@@ -51,19 +51,19 @@ nav {
   }
 
   .scrollable {
-    overflow-y: auto;
-
-    a {
-      border-bottom-color: whitesmoke;
-      padding-left: 2em;
-    }
-  }
-
-  .expandable {
     display: none;
+    overflow-y: auto;
 
     &.open {
       display: block;
+    }
+
+    a {
+      border-bottom-color: whitesmoke;
+
+      &:first-child {
+        padding-left: 2em;
+      }
     }
   }
 }
@@ -80,7 +80,7 @@ nav {
     min-height: 72px;
 
     &.open {
-      background: whitesmoke;
+      background: lightcyan;
     }
   }
 

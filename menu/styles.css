@@ -24,23 +24,23 @@ nav {
     width: 100%; }
     nav .cellular a:last-child {
       white-space: nowrap; }
-  nav [data-expandable-id] {
+  nav [data-scrollable-id] {
     border-width: 0 1px 1px 0; }
-    nav [data-expandable-id]:before {
+    nav [data-scrollable-id]:before {
       content: '▸'; }
-    nav [data-expandable-id].open {
+    nav [data-scrollable-id].open {
       border-width: 0 1px 0 1px; }
-      nav [data-expandable-id].open:before {
+      nav [data-scrollable-id].open:before {
         content: '▾'; }
   nav .scrollable {
+    display: none;
     overflow-y: auto; }
-    nav .scrollable a {
-      border-bottom-color: whitesmoke;
-      padding-left: 2em; }
-  nav .expandable {
-    display: none; }
-    nav .expandable.open {
+    nav .scrollable.open {
       display: block; }
+    nav .scrollable a {
+      border-bottom-color: whitesmoke; }
+      nav .scrollable a:first-child {
+        padding-left: 2em; }
 
 .primary-nav {
   z-index: 2;
@@ -52,7 +52,7 @@ nav {
     padding: 4.25em 0 .5em;
     min-height: 72px; }
     .primary-nav a.open {
-      background: whitesmoke; }
+      background: lightcyan; }
   .primary-nav .icon:before {
     position: absolute;
     content: '✪';
