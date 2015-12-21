@@ -1,7 +1,3 @@
-$.fn.getBBoxHeight = function () {
-  return parseInt($(this).css('height'));
-};
-
 function hideSecondaryNavs() {
   $('[data-secondary-nav-id], .secondary-nav').removeClass('open');
 }
@@ -9,15 +5,16 @@ function hideSecondaryNavs() {
 function setScrollableHeight() {
   $('.secondary-nav.open .scrollable.open').each(function () {
     var $this = $(this),
-      availableHeight = $this.closest('nav').height();
+      availableHeight = $this.closest('nav').outerHeight(),
+      scrollableHeight = $this.get(0).scrollHeight;
 
     $this.siblings(':not(.scrollable)').each(function () {
-      availableHeight -= $(this).getBBoxHeight();
+      availableHeight -= $(this).outerHeight();
     });
 
-    if (availableHeight < $this.getBBoxHeight()) {
+    if (availableHeight < scrollableHeight) {
       $this.css('height', availableHeight + 'px');
-    } else {
+    } else if (availableHeight > scrollableHeight) {
       $this.css('height', '');
     }
   });
