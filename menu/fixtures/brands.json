@@ -1,0 +1,12 @@
+[{
+  "name": "Brand 1",
+  "guid": "brand-1"
+},
+{
+  "name": "Brand 2 has a long name to show what happens when the link wraps",
+  "guid": "brand-2"
+},
+{
+  "name": "Brand 3",
+  "guid": "brand-3"
+}]

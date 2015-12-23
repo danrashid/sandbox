@@ -1,105 +1,80 @@
 @charset "UTF-8";
 html,
 body,
-.primary-nav,
-.secondary-nav {
+#lhn {
   height: 100%; }
 
-.container {
-  padding-left: 88px; }
+.icon:before {
+  display: inline-block;
+  content: '✪'; }
 
-.primary-nav,
-.secondary-nav {
+#lhn {
+  z-index: 1;
   position: fixed;
   top: 45px;
-  /* Top Bar height */
-  background: white;
-  box-shadow: 1px 1px 1px lightgray;
-  line-height: normal; }
-  .primary-nav a,
-  .primary-nav span,
-  .primary-nav .scrollable,
-  .secondary-nav a,
-  .secondary-nav span,
-  .secondary-nav .scrollable {
-    display: block;
-    box-sizing: border-box; }
-  .primary-nav a:hover,
-  .secondary-nav a:hover {
+  left: 0; }
+  #lhn a,
+  #lhn span {
+    display: block; }
+  #lhn a:hover {
     background: whitesmoke; }
-  .primary-nav span,
-  .secondary-nav span {
-    color: dimgray; }
-  .primary-nav .cellular > *,
-  .secondary-nav .cellular > * {
-    display: table-cell;
-    width: 100%; }
-    .primary-nav .cellular > *:not(:first-child),
-    .secondary-nav .cellular > *:not(:first-child) {
-      white-space: nowrap; }
-  .primary-nav [data-scrollable-id]:after,
-  .secondary-nav [data-scrollable-id]:after {
+  #lhn .dock,
+  #lhn .flyout {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: white;
+    box-shadow: 1px 1px 1px lightgray; }
+  #lhn .dock {
+    z-index: 3;
+    width: 72px;
+    left: 0;
+    font-size: .75em;
+    line-height: normal;
+    text-align: center; }
+    #lhn .dock a {
+      padding: .5em 0; }
+      #lhn .dock a.open {
+        background: whitesmoke; }
+    #lhn .dock .icon:before {
+      display: block;
+      font-size: 4em;
+      line-height: 1em; }
+  #lhn .flyout {
+    z-index: 2;
+    width: 432px;
+    left: -360px;
+    transition: left .5s; }
+    #lhn .flyout.open {
+      left: 72px; }
+    #lhn .flyout a,
+    #lhn .flyout span,
+    #lhn .flyout .scrollable {
+      border-bottom: 1px solid gainsboro; }
+    #lhn .flyout a,
+    #lhn .flyout span {
+      padding: .5em .75em; }
+      #lhn .flyout a:not(:first-child),
+      #lhn .flyout span:not(:first-child) {
+        border-left: 1px solid gainsboro; }
+    #lhn .flyout .icon:before {
+      margin-right: .25em; }
+  #lhn [data-scrollable-id]:after {
     content: '▸';
     margin-left: .25em; }
-  .primary-nav [data-scrollable-id].open:after,
-  .secondary-nav [data-scrollable-id].open:after {
+  #lhn [data-scrollable-id].open:after {
     content: '▾'; }
-  .primary-nav .scrollable,
-  .secondary-nav .scrollable {
+  #lhn .scrollable {
     display: none;
     overflow-y: auto; }
-    .primary-nav .scrollable.open,
-    .secondary-nav .scrollable.open {
+    #lhn .scrollable.open {
       display: block; }
-    .primary-nav .scrollable > a,
-    .primary-nav .scrollable .cellular :first-child,
-    .secondary-nav .scrollable > a,
-    .secondary-nav .scrollable .cellular :first-child {
-      padding-left: 2em; }
-
-.primary-nav {
-  z-index: 2;
-  width: 72px;
-  left: 0;
-  text-align: center;
-  font-size: .75em; }
-  .primary-nav a {
-    position: relative;
-    padding: 4.25em 0 .5em;
-    min-height: 72px; }
-    .primary-nav a.open {
-      background: lightcyan; }
-  .primary-nav .icon:before {
-    position: absolute;
-    content: '✪';
-    font-size: 4em;
-    left: .375em;
-    top: 0; }
-
-.secondary-nav {
-  z-index: 1;
-  width: 432px;
-  left: -360px;
-  transition: left .5s; }
-  .secondary-nav.open {
-    left: 72px; }
-  .secondary-nav a,
-  .secondary-nav span,
-  .secondary-nav .scrollable {
-    border-bottom: 1px solid lightgray; }
-  .secondary-nav a,
-  .secondary-nav span {
-    padding: .75em 1em; }
-  .secondary-nav span,
-  .secondary-nav [data-scrollable-id].open,
-  .secondary-nav .scrollable a {
-    border-bottom-color: whitesmoke; }
-  .secondary-nav span,
-  .secondary-nav [data-scrollable-id] {
-    border-right: 1px solid lightgray; }
-  .secondary-nav .scrollable > :last-child a {
-    border-bottom: none; }
-  .secondary-nav .icon:before {
-    display: inline-block;
-    content: '✪';
-    width: 1em; }
+    #lhn .scrollable > a,
+    #lhn .scrollable > .cellular :first-child {
+      padding-left: 1.875em; }
+  #lhn .cellular > * {
+    display: table-cell; }
+    #lhn .cellular > *:first-child {
+      width: 100%; }
+    #lhn .cellular > *:not(:first-child) {
+      white-space: nowrap; }

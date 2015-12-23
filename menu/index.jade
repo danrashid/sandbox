@@ -7,154 +7,93 @@ html(lang="en")
     link(rel="stylesheet" href="../lib/foundation.min.css")
     link(rel="stylesheet" href="styles.css")
     script(src="../lib/modernizr.js")
+    script(src="../lib/jquery.js")
+    script(src="../lib/underscore-min.js")
+    script(src="../lib/backbone-min.js")
+    script(src="../lib/jade-runtime.js")
+    script(src="collections/scrollable.js")
+    script(src="templates/scrollable.js")
+    script(src="views/scrollable.js")
+    script(src="views/flyout.js")
+    script(src="views/lhn.js")
 
   body
-    nav.top-bar
+    nav.top-bar#top-bar
 
-    nav.primary-nav
-      a(href="#" data-secondary-nav-id="brands-nav").icon Dashboard
-      a(href="#" data-secondary-nav-id="behaviors-nav").icon Behaviors
-      a(href="#" data-secondary-nav-id="user-attributes-nav").icon User Attributes
-      a(href="#" data-secondary-nav-id="segments-nav").icon Segments
-      a(href="#" data-secondary-nav-id="actions-nav").icon Actions
-      a(href="#inspect").icon Inspect
+    nav#lhn
 
-    nav.secondary-nav#brands-nav
-      .cellular
-        span.icon Brands
-        a(href="#add-brand") Add
-        a(href="#brands") View all
-      .scrollable.open
-        .cellular
-          a(href="#brand-1") Brand 1
-          a(href="#edit-brand-1") Edit
-        .cellular
-          a(href="#brand-2") Brand 2 has a long name to show what happens when the link wraps
-          a(href="#edit-brand-2") Edit
-        .cellular
-          a(href="#brand-3") Brand 3
-          a(href="#edit-brand-3") Edit
+      .dock
+        a(href="#" data-flyout-id="brands-flyout").icon Dashboard
+        a(href="#" data-flyout-id="behaviors-flyout").icon Behaviors
+        a(href="#" data-flyout-id="user-attributes-flyout").icon User Attributes
+        a(href="#" data-flyout-id="segments-flyout").icon Segments
+        a(href="#" data-flyout-id="actions-flyout").icon Actions
+        a(href="#inspect").icon Inspect
 
-    nav.secondary-nav#behaviors-nav
-      .cellular
-        a(href="#" data-scrollable-id="behaviors-scrollable").icon.open Behaviors
-        a(href="#add-behavior") Add
-        a(href="#behaviors") View all
-      .scrollable#behaviors-scrollable.open
+      .flyout#brands-flyout
         .cellular
-          a(href="#behavior-1") Behavior 1
-          a(href="#edit-behavior-1") Edit
-        .cellular
-          a(href="#behavior-2") Behavior 2
-          a(href="#edit-behavior-2") Edit
-        .cellular
-          a(href="#behavior-3") Behavior 3
-          a(href="#edit-behavior-3") Edit
-        .cellular
-          a(href="#behavior-4") Behavior 4
-          a(href="#edit-behavior-4") Edit
-        .cellular
-          a(href="#behavior-5") Behavior 5
-          a(href="#edit-behavior-5") Edit
-        .cellular
-          a(href="#behavior-6") Behavior 6
-          a(href="#edit-behavior-6") Edit
-      .cellular
-        a(href="#" data-scrollable-id="behavior-traits-scrollable").icon Behavior Traits
-        a(href="#add-behavior-trait") Add
-        a(href="#behavior-traits") View all
-      .scrollable#behavior-traits-scrollable
-        .cellular
-          a(href="#behavior-trait-1") Behavior Trait 1
-          a(href="#edit-behavior-trait-1") Edit
-        .cellular
-          a(href="#behavior-trait-2") Behavior Trait 2
-          a(href="#edit-behavior-trait-2") Edit
-        .cellular
-          a(href="#behavior-trait-3") Behavior Trait 3
-          a(href="#edit-behavior-trait-3") Edit
-      a(href="#behavior-groups").icon Behavior Groups
-      a(href="#channels").icon Channels
+          span.icon Brands
+          a(href="#add-brand") Add
+          a(href="#brands") View all
+        .scrollable#brands-scrollable.open
 
-    nav.secondary-nav#user-attributes-nav
-      .cellular
-        a(href="#" data-scrollable-id="user-attributes-scrollable").icon.open User Attributes
-        a(href="#add-user-attribute") Add
-        a(href="#user-attributes") View all
-      .scrollable#user-attributes-scrollable.open
+      .flyout#behaviors-flyout
         .cellular
-          a(href="#user-attribute-1") User Attribute 1
-          a(href="#edit-user-attribute-1") Edit
+          a(href="#" data-scrollable-id="behaviors-scrollable").icon.open Behaviors
+          a(href="#add-behaviors") Add
+          a(href="#behaviors") View all
+        .scrollable#behaviors-scrollable.open
+
         .cellular
-          a(href="#user-attribute-2") User Attribute 2
-          a(href="#edit-user-attribute-2") Edit
+          a(href="#" data-scrollable-id="behavior-traits-scrollable").icon Behavior Traits
+          a(href="#add-behavior-traits") Add
+          a(href="#behavior-traits") View all
+        .scrollable#behavior-traits-scrollable
+
+        a(href="#behavior-groups").icon Behavior Groups
+        a(href="#channels").icon Channels
+
+      .flyout#user-attributes-flyout
         .cellular
-          a(href="#user-attribute-3") User Attribute 3
-          a(href="#edit-user-attribute-3") Edit
-      .cellular
-        a(href="#" data-scrollable-id="user-attribute-sources-scrollable").icon User Attribute Sources
-        a(href="#add-user-attribute-source") Add
-        a(href="#user-attribute-sources") View all
-      .scrollable#user-attribute-sources-scrollable
+          a(href="#" data-scrollable-id="user-attributes-scrollable").icon.open User Attributes
+          a(href="#add-user-attributes") Add
+          a(href="#user-attributes") View all
+        .scrollable#user-attributes-scrollable.open
+
         .cellular
-          a(href="#user-attribute-source-1") User Attribute Source 1
-          a(href="#edit-user-attribute-source-1") Edit
+          a(href="#" data-scrollable-id="user-attribute-sources-scrollable").icon User Attribute Sources
+          a(href="#add-user-attribute-sources") Add
+          a(href="#user-attribute-sources") View all
+        .scrollable#user-attribute-sources-scrollable
+
+      .flyout#segments-flyout
         .cellular
-          a(href="#user-attribute-source-2") User Attribute Source 2
-          a(href="#edit-user-attribute-source-2") Edit
+          span.icon Segments
+          a(href="#add-segment") Add
+          a(href="#segments") View all
+        .scrollable#segments-scrollable.open
+
+      .flyout#actions-flyout
         .cellular
-          a(href="#user-attribute-source-3") User Attribute Source 3
-          a(href="#edit-user-attribute-source-3") Edit
+          span.icon Actions
+          a(href="#add-action") Add
+          a(href="#actions") View all
+        .scrollable#actions-scrollable.open
 
-    nav.secondary-nav#segments-nav
-      .cellular
-        span.icon Segments
-        a(href="#add-segment") Add
-        a(href="#segments") View all
-      .scrollable.open
-        a(href="#segment-1") Segment 1
-        a(href="#segment-2") Segment 2
-        a(href="#segment-3") Segment 3
-        a(href="#segment-4") Segment 4
-        a(href="#segment-5") Segment 5
-        a(href="#segment-6") Segment 6
-        a(href="#segment-7") Segment 7
-        a(href="#segment-8") Segment 8
-        a(href="#segment-9") Segment 9
+    .row
+      .columns
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-    nav.secondary-nav#actions-nav
-      .cellular
-        span.icon Actions
-        a(href="#add-action") Add
-        a(href="#actions") View all
-      .scrollable.open
-        .cellular
-          a(href="#action-1") Action 1
-          a(href="#edit-action-1") Edit
-        .cellular
-          a(href="#action-2") Action 2
-          a(href="#edit-action-2") Edit
-        .cellular
-          a(href="#action-3") Action 3
-          a(href="#edit-action-3") Edit
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-    .container
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      .row
-        .columns
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-    script(src="../lib/jquery.js")
     script(src="../lib/foundation.min.js")
     script.
       $(document).foundation();
-    script(src="scripts.js")
+
+      new LhnView();

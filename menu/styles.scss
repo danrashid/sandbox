@@ -1,43 +1,92 @@
 html,
 body,
-.primary-nav,
-.secondary-nav {
+#lhn {
   height: 100%;
 }
 
-.container {
-  padding-left: 88px;
+.icon:before {
+  display: inline-block;
+  content: '✪';
 }
 
-.primary-nav,
-.secondary-nav {
+#lhn {
+  $dock-width: 72px;
+  $flyout-width: 432px;
+  $topbar-height: 45px;
+
+  z-index: 1;
   position: fixed;
-  top: 45px; /* Top Bar height */
-  background: white;
-  box-shadow: 1px 1px 1px lightgray;
-  line-height: normal;
+  top: $topbar-height;
+  left: 0;
 
   a,
-  span,
-  .scrollable {
+  span {
     display: block;
-    box-sizing: border-box;
   }
 
   a:hover {
     background: whitesmoke;
   }
 
-  span {
-    color: dimgray;
+  .dock,
+  .flyout {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: white;
+    box-shadow: 1px 1px 1px lightgray;
   }
 
-  .cellular > * {
-    display: table-cell;
-    width: 100%;
+  .dock {
+    z-index: 3;
+    width: $dock-width;
+    left: 0;
+    font-size: .75em;
+    line-height: normal;
+    text-align: center;
 
-    &:not(:first-child) {
-      white-space: nowrap;
+    a {
+      padding: .5em 0;
+
+      &.open {
+        background: whitesmoke;
+      }
+    }
+
+    .icon:before {
+      display: block;
+      font-size: 4em;
+      line-height: 1em;
+    }
+  }
+
+  .flyout {
+    z-index: 2;
+    width: $flyout-width;
+    left: $dock-width - $flyout-width;
+    transition: left .5s;
+
+    &.open {
+      left: $dock-width;
+    }
+
+    a,
+    span,
+    .scrollable {
+      border-bottom: 1px solid gainsboro;
+    }
+
+    a,
+    span {
+      padding: .5em .75em;
+
+      &:not(:first-child) {
+        border-left: 1px solid gainsboro;
+      }
+    }
+
+    .icon:before {
+      margin-right: .25em;
     }
   }
 
@@ -46,10 +95,9 @@ body,
       content: '▸';
       margin-left: .25em;
     }
-    &.open {
-      &:after {
-        content: '▾';
-      }
+
+    &.open:after {
+      content: '▾';
     }
   }
 
@@ -62,77 +110,20 @@ body,
     }
 
     > a,
-    .cellular :first-child {
-      padding-left: 2em;
-    }
-  }
-}
-
-.primary-nav {
-  z-index: 2;
-  width: 72px;
-  left: 0;
-  text-align: center;
-  font-size: .75em;
-
-  a {
-    position: relative;
-    padding: 4.25em 0 .5em;
-    min-height: 72px;
-
-    &.open {
-      background: lightcyan;
+    > .cellular :first-child {
+      padding-left: 1.875em;
     }
   }
 
-  .icon:before {
-    position: absolute;
-    content: '✪';
-    font-size: 4em;
-    left: .375em;
-    top: 0;
-  }
-}
+  .cellular > * {
+    display: table-cell;
 
-.secondary-nav {
-  z-index: 1;
-  width: 432px;
-  left: -360px;
-  transition: left .5s;
+    &:first-child {
+      width: 100%;
+    }
 
-  &.open {
-    left: 72px;
-  }
-
-  a,
-  span,
-  .scrollable {
-    border-bottom: 1px solid lightgray;
-  }
-
-  a,
-  span {
-    padding: .75em 1em;
-  }
-
-  span,
-  [data-scrollable-id].open,
-  .scrollable a {
-    border-bottom-color: whitesmoke;
-  }
-
-  span,
-  [data-scrollable-id] {
-    border-right: 1px solid lightgray;
-  }
-
-  .scrollable > :last-child a {
-    border-bottom: none;
-  }
-
-  .icon:before {
-    display: inline-block;
-    content: '✪';
-    width: 1em;
+    &:not(:first-child) {
+      white-space: nowrap;
+    }
   }
 }
