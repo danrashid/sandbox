@@ -1,6 +1,22 @@
 var ScrollableView = Backbone.View.extend({
   template: scrollableTemplate,
 
+  events: {
+    'scrollable:resize': 'setHeight'
+  },
+
+  setHeight: function () {
+    var availableHeight = this.$el.parent().outerHeight();
+
+    this.$el.siblings(':not(.scrollable)').each(function () {
+      availableHeight -= $(this).outerHeight();
+    });
+
+    this.$el.height(Math.min(this.el.scrollHeight, availableHeight));
+
+    return false;
+  },
+
   initialize: function (options) {
     this.showEditLink = options.showEditLink;
 

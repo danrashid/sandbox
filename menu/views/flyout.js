@@ -1,7 +1,6 @@
 var FlyoutView = Backbone.View.extend({
   events: {
-    'click [data-scrollable-id]': 'toggleScrollable',
-    'scrollable:resize': 'setScrollableHeight'
+    'click [data-scrollable-id]': 'toggleScrollable'
   },
 
   closeScrollables: function () {
@@ -19,19 +18,6 @@ var FlyoutView = Backbone.View.extend({
       $scrollableLink.add($scrollable).addClass('open');
       $scrollable.trigger('scrollable:resize');
     }
-
-    return false;
-  },
-
-  setScrollableHeight: function (e) {
-    var currentHeight = e.target.scrollHeight,
-      availableHeight = this.$el.outerHeight();
-
-    this.$el.children(':not(.scrollable)').each(function () {
-      availableHeight -= $(this).outerHeight();
-    });
-
-    $(e.target).height(Math.min(currentHeight, availableHeight));
 
     return false;
   }
