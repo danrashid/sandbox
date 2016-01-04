@@ -1,12 +1,12 @@
 [{
   "name": "User Attribute 1",
-  "guid": "user-attribute-1"
+  "guid": "uat1"
 },
 {
   "name": "User Attribute 2",
-  "guid": "user-attribute-2"
+  "guid": "uat2"
 },
 {
   "name": "User Attribute 3",
-  "guid": "user-attribute-3"
+  "guid": "uat3"
 }]

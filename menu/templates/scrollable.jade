@@ -1,7 +1,0 @@
-each entity in entities
-  if showEditLink
-    .cellular
-      a(href="##{entity.guid}")= entity.name
-      a(href="#edit-#{entity.guid}") Edit
-  else
-    a(href="##{entity.guid}")= entity.name

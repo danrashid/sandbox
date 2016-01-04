@@ -1,24 +1,24 @@
 [{
   "name": "Behavior 1",
-  "guid": "behavior-1"
+  "guid": "beh1"
 },
 {
   "name": "Behavior 2",
-  "guid": "behavior-2"
+  "guid": "beh2"
 },
 {
   "name": "Behavior 3",
-  "guid": "behavior-3"
+  "guid": "beh3"
 },
 {
   "name": "Behavior 4",
-  "guid": "behavior-4"
+  "guid": "beh4"
 },
 {
   "name": "Behavior 5",
-  "guid": "behavior-5"
+  "guid": "beh5"
 },
 {
   "name": "Behavior 6",
-  "guid": "behavior-6"
+  "guid": "beh6"
 }]

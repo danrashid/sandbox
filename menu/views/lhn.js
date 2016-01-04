@@ -34,7 +34,7 @@ var LhnView = Backbone.View.extend({
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'brands'}),
         el: '#brands-scrollable',
-        showEditLink: true
+        template: brandsTemplate
       });
     }),
 
@@ -46,13 +46,13 @@ var LhnView = Backbone.View.extend({
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'behaviors'}),
         el: '#behaviors-scrollable',
-        showEditLink: true
+        template: behaviorsTemplate
       });
 
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'behavior-traits'}),
         el: '#behavior-traits-scrollable',
-        showEditLink: true
+        template: behaviorTraitsTemplate
       });
     }),
 
@@ -64,13 +64,13 @@ var LhnView = Backbone.View.extend({
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'user-attributes'}),
         el: '#user-attributes-scrollable',
-        showEditLink: true
+        template: userAttributesTemplate
       });
 
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'user-attribute-sources'}),
         el: '#user-attribute-sources-scrollable',
-        showEditLink: true
+        template: userAttributeSourcesTemplate
       });
     }),
 
@@ -82,7 +82,7 @@ var LhnView = Backbone.View.extend({
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'segments'}),
         el: '#segments-scrollable',
-        showEditLink: false
+        template: segmentsTemplate
       });
     }),
 
@@ -94,7 +94,7 @@ var LhnView = Backbone.View.extend({
       new ScrollableView({
         collection: new ScrollableCollection(null, {path: 'actions'}),
         el: '#actions-scrollable',
-        showEditLink: true
+        template: actionsTemplate
       });
     })
   },

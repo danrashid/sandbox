@@ -1,6 +1,4 @@
 var ScrollableView = Backbone.View.extend({
-  template: scrollableTemplate,
-
   events: {
     'scrollable:resize': 'setHeight'
   },
@@ -18,7 +16,7 @@ var ScrollableView = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.showEditLink = options.showEditLink;
+    this.template = options.template;
 
     this.listenTo(this.collection, 'update', this.render);
 

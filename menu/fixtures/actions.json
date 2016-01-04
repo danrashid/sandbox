@@ -1,12 +1,12 @@
 [{
   "name": "Action 1",
-  "guid": "action-1"
+  "guid": "act1"
 },
 {
   "name": "Action 2",
-  "guid": "action-2"
+  "guid": "act2"
 },
 {
   "name": "Action 3",
-  "guid": "action-3"
+  "guid": "act3"
 }]

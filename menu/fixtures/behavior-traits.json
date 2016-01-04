@@ -1,12 +1,12 @@
 [{
   "name": "Behavior Trait 1",
-  "guid": "behavior-trait-1"
+  "guid": "bet1"
 },
 {
   "name": "Behavior Trait 2",
-  "guid": "behavior-trait-2"
+  "guid": "bet2"
 },
 {
   "name": "Behavior Trait 3",
-  "guid": "behavior-trait-3"
+  "guid": "bet3"
 }]
