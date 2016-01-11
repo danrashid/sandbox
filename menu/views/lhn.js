@@ -10,7 +10,7 @@ var LhnView = Backbone.View.extend({
 
     $(window)
       .on('scroll', this.setTopPosition.bind(this))
-      .on('resize', this.triggerScrollableResize.bind(this));
+      .on('scroll resize', this.triggerScrollableResize.bind(this));
   },
 
   closeFlyouts: function () {

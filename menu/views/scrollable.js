@@ -4,7 +4,8 @@ var ScrollableView = Backbone.View.extend({
   },
 
   setHeight: function () {
-    var availableHeight = this.$el.parent().outerHeight();
+    var $lhn = $('#lhn'),
+      availableHeight = $lhn.outerHeight() - $lhn.position().top;
 
     this.$el.siblings(':not(.scrollable)').each(function () {
       availableHeight -= $(this).outerHeight();
