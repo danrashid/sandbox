@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Super Tabs</title>
+<link rel="stylesheet" href="lib/normalize.css" />
+<link rel="stylesheet" href="lib/foundation.min.css" />
+<script src="lib/modernizr.js"></script>
+</head>
+
+<body>
+
+<ul>
+  <li><a href="#range=60m">60m</a></li>
+  <li><a href="#range=24h">24h</a></li>
+  <li><a href="#range=7d">7d</a></li>
+  <li><a href="#range=30d">30d</a></li>
+</ul>
+
+<ul class="tabs vertical" data-tab data-options="deep_linking:true;scroll_to_content:false">
+  <li class="tab-title active"><a href="#panel1">Tab 1</a></li>
+  <li class="tab-title"><a href="#panel2">Tab 2</a></li>
+  <li class="tab-title"><a href="#panel3">Tab 3</a></li>
+  <li class="tab-title"><a href="#panel4">Tab 4</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
+  </div>
+  <div class="content" id="panel2">
+    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel3">
+    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+  </div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="lib/foundation/foundation.js"></script>
+<script src="lib/foundation/foundation.tab.js"></script>
+<script type="text/javascript">
+
+$(document).foundation();
+
+</script>
+</body>
+</html>
