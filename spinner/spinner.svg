@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<svg viewBox="-1 -1 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g transform="scale(.75)" fill="#ccc">
+    <circle cx="0" cy="1" r=".2" />
+    <circle cx=".707" cy=".707" r=".2" />
+    <circle cx="1" cy="0" r=".2" />
+    <circle cx=".707" cy="-.707" r=".2" />
+    <circle cx="0" cy="-1" r=".25" />
+    <circle cx="-.707" cy="-.707" r=".2" />
+    <circle cx="-1" cy="0" r=".2" />
+    <circle cx="-.707" cy=".707" r=".2" />
+  </g>
+</svg>
