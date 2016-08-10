@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>interval</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var count = 0,
+  interval = window.setInterval(function () {
+    console.log(++count);
+
+    if (count === 5) {
+      window.clearInterval(interval);
+    }
+  }, 1000);
+
+</script>
+</body>
+</html>

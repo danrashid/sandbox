@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>extend</title>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../lib/underscore-min.js"></script>
+  <script type="text/javascript" src="../lib/backbone-min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+var Bar = Backbone.Model.extend({
+  initialize: function () {
+    this.on('change', function () {
+      console.log('Bar changed!');
+    });
+  }
+});
+
+var bar = new Bar(),
+  foo = new Backbone.Model({
+    bar: bar
+  });
+
+</script>
+</body>
+</html>

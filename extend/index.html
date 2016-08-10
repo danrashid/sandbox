@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>extend</title>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../lib/underscore-min.js"></script>
+  <script type="text/javascript" src="../lib/backbone-min.js"></script>
+  <script type="text/javascript" src="base-view.js"></script>
+  <script type="text/javascript" src="alice-view.js"></script>
+  <script type="text/javascript" src="bob-view.js"></script>
+</head>
+<body>
+<div id="alice">
+  <h1>Alice</h1>
+  <a href="#foo">Foo</a>
+  <a href="#bar">Bar</a>
+</div>
+<div id="bob">
+  <h1>Bob</h1>
+  <a href="#foo">Foo</a>
+  <a href="#bar">Bar</a>
+</div>
+<script type="text/javascript">
+
+  new BobView({
+    el: '#bob'
+  });
+
+  new AliceView({
+    el: '#alice'
+  });
+
+</script>
+</body>
+</html>
