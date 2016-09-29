@@ -291,7 +291,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 $(document).foundation();
 
 $(window).on('scroll', function () {
-  var howFarUserHasScrolledDown = $(window).scrollTop();
+  var howFarUserHasScrolledDown = $(this).scrollTop();
 
   $('.table').each(function () {
     var $table = $(this),

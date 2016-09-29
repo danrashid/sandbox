@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backbone Modal</title>
+
+  <link rel="stylesheet" href="/lib/normalize.css">
+  <link rel="stylesheet" href="/lib/foundation.min.css">
+
+  <script src="/lib/jquery.js"></script>
+  <script src="/lib/modernizr.js"></script>
+  <script src="/lib/underscore-min.js"></script>
+  <script src="/lib/backbone-min.js"></script>
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <template id="template">
+    <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <h2 id="modalTitle">This modal opened via Foundation’s blessing</h2>
+      <p><a href="#" class="important-thing">If a Backbone view can fire an event in an injected modal,
+        clicking this should raise an alert.</a></p>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+  </template>
+
+  <script src="/lib/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+
+    var View = Backbone.View.extend({
+      template: function () {
+        return $('#template').html();
+      },
+      initialize: function () {
+        this.render();
+      },
+      events: {
+        'click .important-thing': 'clickFromEventHash'
+      },
+      clickFromEventHash: function () {
+        debugger;
+      },
+      clickFromHackyListener: function () {
+        debugger;
+      },
+      render: function () {
+        this.$el.html(this.template());
+        this.$('.important-thing').on('click', this.clickFromHackyListener);
+        this.$el.foundation('reveal', 'reflow');
+      }
+    });
+
+    var view = new View({
+      el: '#container'
+    });
+  </script>
+</body>
+</html>
