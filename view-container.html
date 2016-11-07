@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>view-container</title>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../lib/underscore-min.js"></script>
+  <script type="text/javascript" src="../lib/backbone-min.js"></script>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script type="text/html" id="template">
+  <a href="#"><%- text %></a>
+</script>
+<script type="text/javascript">
+
+var View = Backbone.View.extend({
+  initialize: function (options) {
+    this.$container = $(options.container);
+  },
+
+  events: {
+    'click a': function () {
+      console.log('click');
+    }
+  },
+
+  render: function () {
+    var template = _.template($('#template').html());
+
+    this.$container.html(this.$el.html(template({
+      text: 'Click me!'
+    })));
+  }
+});
+
+
+function bindView() {
+  var view = new View({
+    container: '#container'
+  });
+
+  view.render();
+}
+
+bindView();
+bindView();
+bindView();
+
+</script>
+</body>
+</html>
