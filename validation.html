@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>validation</title>
+  <style type="text/css">
+
+  label {
+    display: block;
+    margin: 1em 0;
+  }
+
+  </style>
+</head>
+<body>
+<form id="form">
+  <label>Email* <input type="email" name="email" required /></label>
+  <label>Number* <input type="number" name="number" required /></label>
+  <label>\w+ <input type="text" name="text" pattern="\w+" /></label>
+  <button type="Submit">Submit</button>
+</form>
+
+<script type="text/javascript">
+
+var form = document.getElementById('form');
+
+form.onsubmit = function () {
+  console.log('submitted');
+
+  return false;
+};
+
+</script>
+
+</body>
+</html>
