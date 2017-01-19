@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>app</title>
+  <script type="text/javascript" src="../lib/jquery.js"></script>
+  <script type="text/javascript" src="../lib/underscore-min.js"></script>
+  <script type="text/javascript" src="../lib/backbone-min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+var App = {
+  extend: function (options) {
+    var app = function () {
+      this.initialize.apply(this, arguments);
+    };
+
+    _.extend(app.prototype, Backbone.Events, options);
+
+    return app;
+  }
+};
+
+var MyApp = App.extend({
+  foo: 'bar',
+  initialize: function () {
+    console.log(this.foo);
+  }
+});
+
+var myApp = new MyApp();
+
+var MyOtherApp = App.extend({
+  baz: 'bang',
+  initialize: function (qux) {
+    console.log(this.foo, this.baz, qux);
+  }
+});
+
+var myOtherApp = new MyOtherApp('ahoy!');
+
+</script>
+</body>
+</html>
